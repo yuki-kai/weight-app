@@ -1,4 +1,32 @@
+// Variables
+@import 'variables';
+
 body {
   margin: 0px;
   padding: 0px;
+}
+
+.default-bg-color {
+  background-color: $black;
+}
+
+nav {
+  // ドロップダウンをホバーで表示
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+.login-form {
+  background-color: $black;
+  width: 340px;
+  padding: 40px;
+  margin: 70px auto;
+  border-radius: 6px;
+  h1 {
+    margin-bottom: 20px;
+  }
+  .form-control {
+    margin-bottom: 10px;
+  }
 }

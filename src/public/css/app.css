@@ -2,3 +2,25 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.default-bg-color {
+  background-color: #2A2A2A;
+}
+
+nav .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.login-form {
+  background-color: #2A2A2A;
+  width: 340px;
+  padding: 40px;
+  margin: 70px auto;
+  border-radius: 6px;
+}
+.login-form h1 {
+  margin-bottom: 20px;
+}
+.login-form .form-control {
+  margin-bottom: 10px;
+}
