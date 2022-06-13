@@ -4,7 +4,15 @@
 body {
   margin: 0px;
   padding: 0px;
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
 }
+
+
 
 .default-bg-color {
   background-color: $black;
@@ -19,7 +27,7 @@ nav {
 
 .login-form {
   background-color: $black;
-  width: 340px;
+  width: 360px;
   padding: 40px;
   margin: 70px auto;
   border-radius: 6px;

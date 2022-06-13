@@ -8,14 +8,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="nav navbar-nav">
         <li class="nav-item m-1">
-          <form action="{{ route('login') }}" method="GET">
-            <button class="btn btn-warning form-control" type="submit">ログイン</button>
-          </form>
+          <a href="{{ route('login') }}" class="text-white">ログイン</a>
         </li>
         <li class="nav-item m-1">
-          <form action="{{ route('register') }}" method="GET">
-            <button class="btn btn-warning form-control" type="submit">新規登録</button>
-          </form>
+          <a href="{{ route('register') }}" class="text-white">新規登録</a>
         </li>
       </ul>
     </div>

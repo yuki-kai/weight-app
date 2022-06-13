@@ -14,4 +14,6 @@ use App\Http\Controllers\WeightController;
 |
 */
 
-Route::get('/', [WeightController::class, 'calendar'])->name('user.calendar');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', [WeightController::class, 'calendar'])->name('user.calendar');
+});

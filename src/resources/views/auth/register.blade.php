@@ -1,6 +1,18 @@
 <x-layout>
   <x-slot name=title>新規登録ページ</x-slot>
   <x-slot name=content>
+
+    {{-- バリデーション --}}
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+    
     <div class="login-form">
       {{ Form::open(['route' => 'register', 'method' => 'POST']) }}
         @csrf
@@ -23,5 +35,6 @@
         <button class="btn btn-warning form-control" type="submit">新規登録</button>
       {{ Form::close() }}
     </div>
+
   </x-slot>
 </x-layout>

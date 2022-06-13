@@ -2,6 +2,12 @@ body {
   margin: 0px;
   padding: 0px;
 }
+body li {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+}
 
 .default-bg-color {
   background-color: #2A2A2A;
@@ -13,7 +19,7 @@ nav .dropdown:hover > .dropdown-menu {
 
 .login-form {
   background-color: #2A2A2A;
-  width: 340px;
+  width: 360px;
   padding: 40px;
   margin: 70px auto;
   border-radius: 6px;
