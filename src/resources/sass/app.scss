@@ -1,7 +1,8 @@
 // Variables
 @import 'variables';
 
-body {
+html, body {
+  height: 100%;
   margin: 0px;
   padding: 0px;
   li {
@@ -11,8 +12,6 @@ body {
     text-decoration: none;
   }
 }
-
-
 
 .default-bg-color {
   background-color: $black;
@@ -36,5 +35,17 @@ nav {
   }
   .form-control {
     margin-bottom: 10px;
+  }
+}
+
+.calendar-wrapper {
+  height: calc(100vh - (56px + 32px));
+  overflow: scroll;
+  .table-calendar {
+    table-layout: fixed;
+    height: 70vh;
+    td {
+      height: 100px;
+    }
   }
 }

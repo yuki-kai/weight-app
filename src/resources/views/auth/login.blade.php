@@ -15,6 +15,7 @@
 
     <div class="login-form">
       {{ Form::open(['method' => 'POST']) }}
+        @csrf
         <h1 class="text-white text-center">ログイン</h1>
         {{ Form::text('email', null,
           ['class' => 'form-control', 'placeholder' => 'メールアドレス'])

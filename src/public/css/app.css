@@ -1,11 +1,12 @@
-body {
+html, body {
+  height: 100%;
   margin: 0px;
   padding: 0px;
 }
-body li {
+html li, body li {
   list-style: none;
 }
-body a {
+html a, body a {
   text-decoration: none;
 }
 
@@ -29,4 +30,16 @@ nav .dropdown:hover > .dropdown-menu {
 }
 .login-form .form-control {
   margin-bottom: 10px;
+}
+
+.calendar-wrapper {
+  height: calc(100vh - 88px);
+  overflow: scroll;
+}
+.calendar-wrapper .table-calendar {
+  table-layout: fixed;
+  height: 70vh;
+}
+.calendar-wrapper .table-calendar td {
+  height: 100px;
 }

@@ -3,17 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\WeightService;
 
 class WeightController extends Controller
 {
+    public function __construct(WeightService $weightService)
+    {
+        $this->weightService = $weightService;
+    }
+
     /**
-     * 指定ユーザーのプロファイルを表示
+     * カレンダーを表示する
      *
-     * @param  int  $id
      * @return \Illuminate\View\View
      */
     public function calendar()
     {
-        return view('user.calendar');
+        $calendar = $this->weightService->createCalendar();
+
+        return view('user.calendar', compact('calendar'));
     }
 }
