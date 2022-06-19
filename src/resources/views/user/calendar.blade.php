@@ -5,7 +5,7 @@
     {{ Form::open() }}
       <div class="container-fluid calendar-wrapper p-0 px-md-5">
         <div class="row m-0">
-          <h3 class="text-center my-2">
+          <h3 class="text-center my-3">
             <a href="{{ route('user.calendar', ['yearMonth' => $calendar['last']]) }}">&lt;</a>
             &nbsp;{{ $calendar['title'] }}&nbsp;
             <a href="{{ route('user.calendar', ['yearMonth' => $calendar['next']]) }}">&gt;</a>
