@@ -26,8 +26,12 @@
               @foreach ($calendar['week'] as $week)
                 <tr>
                   @foreach ($week as $day)
-                    <td>
-                      <span>{{ $day }}</span>
+                    <td class="text-center align-bottom">
+                      <span class="day">{{ $day['day'] }}</span><br />
+                      @if ($day['weight'])
+                        {{-- 小数点以下が0の場合も表示させる --}}
+                        <span>{{ number_format(intval($day['weight']), 1) }}kg</span>
+                      @endif
                     </td>
                   @endforeach
                 </tr>

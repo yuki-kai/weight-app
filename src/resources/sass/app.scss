@@ -39,13 +39,36 @@ nav {
 }
 
 .calendar-wrapper {
+  // ヘッダーとフッターを引いたブラウザの高さ
   height: calc(100vh - (56px + 32px));
   overflow: scroll;
   .table-calendar {
     table-layout: fixed;
-    height: 70vh;
-    td {
-      height: 100px;
+    height: 60vh;
+
+    tbody {
+      font-size: 20px;
+      td {
+        height: 100px;
+        position: relative;
+        .day {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+        }
+        span {
+          color: #333333;
+        }
+      }
+    }
+    // 画面幅576px以下
+    @media (max-width: 576px) {
+      tbody {
+        font-size: 12px;
+        .day {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

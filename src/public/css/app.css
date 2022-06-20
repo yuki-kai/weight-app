@@ -38,8 +38,28 @@ nav .dropdown:hover > .dropdown-menu {
 }
 .calendar-wrapper .table-calendar {
   table-layout: fixed;
-  height: 70vh;
+  height: 60vh;
 }
-.calendar-wrapper .table-calendar td {
+.calendar-wrapper .table-calendar tbody {
+  font-size: 20px;
+}
+.calendar-wrapper .table-calendar tbody td {
   height: 100px;
+  position: relative;
+}
+.calendar-wrapper .table-calendar tbody td .day {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.calendar-wrapper .table-calendar tbody td span {
+  color: #333333;
+}
+@media (max-width: 576px) {
+  .calendar-wrapper .table-calendar tbody {
+    font-size: 12px;
+  }
+  .calendar-wrapper .table-calendar tbody .day {
+    font-size: 14px;
+  }
 }

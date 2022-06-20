@@ -28,24 +28,26 @@ class WeightService
     $dayCount = date('t', $timestamp); // 該当月の日数を取得
     $startDay = date('N', $timestamp); // 該当月の曜日を月曜始まりで取得
 
-    $calendar['week'] = [];
     $weekCount = 1; // 第1週
     // 該当月カレンダーの初日までの空白を埋める
     for ($prevDay = 1; $prevDay < $startDay; $prevDay++) {
-      $calendar['week'][$weekCount][] = '';
+      $calendar['week'][$weekCount][] = ['day' => '', 'weight' => ''];
     }
+
     // 該当月の初日から最終日までをループ
     for ($day = 1; $day <= $dayCount; $day++, $startDay++) {
-      $calendar['week'][$weekCount][] = $day;
+      $weight = \App\Models\Weight::where('day', date('Y-m-'.$day, $timestamp))->value('weight');
+      $calendar['week'][$weekCount][] = ['day' => $day, 'weight' => $weight];
       // 週の終わり且つ月末ではなければ翌週へ
       if ($startDay % Day::SUNDAY == 0 && $day != $dayCount) {
         $weekCount++;
       }
     }
+
     // 該当月カレンダーの最終日以降の空白を埋める
     $diffDay = Day::SUNDAY - count($calendar['week'][$weekCount]);
     for ($nextDay = 1; $nextDay <= $diffDay; $nextDay++) {
-      $calendar['week'][$weekCount][] = '';
+      $calendar['week'][$weekCount][] = ['day' => '', 'weight' => ''];
     }
 
     return $calendar;
