@@ -44,7 +44,7 @@ nav .dropdown:hover > .dropdown-menu {
   font-size: 20px;
 }
 .calendar-wrapper .table-calendar tbody td {
-  height: 100px;
+  height: 80px;
   position: relative;
 }
 .calendar-wrapper .table-calendar tbody td .day {
@@ -62,4 +62,12 @@ nav .dropdown:hover > .dropdown-menu {
   .calendar-wrapper .table-calendar tbody .day {
     font-size: 14px;
   }
+}
+
+.weight_integer {
+  width: 60px;
+}
+
+.weight_decimal {
+  width: 40px;
 }

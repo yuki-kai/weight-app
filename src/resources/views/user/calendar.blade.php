@@ -8,6 +8,7 @@
           <h3 class="text-center my-3">
             <a href="{{ route('user.calendar', ['yearMonth' => $calendar['last']]) }}">&lt;</a>
             &nbsp;{{ $calendar['title'] }}&nbsp;
+            <input type="hidden" id="year_month" value="{{ $calendar['title'] }}">
             <a href="{{ route('user.calendar', ['yearMonth' => $calendar['next']]) }}">&gt;</a>
           </h3>
           <table class="table table-bordered table-calendar mb-5">
@@ -29,8 +30,7 @@
                     <td class="text-center align-bottom">
                       <span class="day">{{ $day['day'] }}</span><br />
                       @if ($day['weight'])
-                        {{-- 小数点以下が0の場合も表示させる --}}
-                        <span>{{ number_format(intval($day['weight']), 1) }}kg</span>
+                        <span class="weight">{{ number_format($day['weight'], 1) }}kg</span>
                       @endif
                     </td>
                   @endforeach
@@ -39,8 +39,51 @@
             </tbody>
           </table>
         </div>
+        
+        <div class="d-flex justify-content-between">
+          {{-- クリックした日付と体重を表示 --}}
+          <div>
+            <h4 id="clicked_day">{{ date('Y年 n月 d日') }}</h4>
+            <h3 id="clicked_weight">
+              @if ($calendar['today_weight']) {{ $calendar['today_weight'] }}kg
+              @else 未登録
+              @endif
+            </h3>
+          </div>
+          
+          <div>
+            <button class="btn btn-warning form-control" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">記録する</button>
+          </div>
+        </div>
       </div>
     {{ Form::close() }}
 
   </x-slot>
 </x-layout>
+
+{{ Form::open(['route' => 'user.calendar.register', 'method' => 'POST']) }}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto" id="exampleModalLabel">
+          {{ Form::date('date', \Carbon\Carbon::now(), ['class' => '']) }}
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          体重 {{ Form::number('weight_integer', $today_weight['weight_integer'], ['class' => 'weight_integer']) }}
+          . {{ Form::number('weight_decimal', $today_weight['weight_decimal'], ['class' => 'weight_decimal']) }} kg
+        </div>
+        <p class="text-center m-0 pt-3">既に体重が記録されている場合は上書きされます。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+        <button class="btn btn-warning" type="submit">記録</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{ Form::close() }}
+
+<script src="{{ asset('js/calendar.js') }}"></script>

@@ -49,7 +49,7 @@ nav {
     tbody {
       font-size: 20px;
       td {
-        height: 100px;
+        height: 80px;
         position: relative;
         .day {
           position: absolute;
@@ -71,4 +71,12 @@ nav {
       }
     }
   }
+}
+
+.weight_integer {
+  width: 50px;
+}
+
+.weight_decimal {
+  width: 40px;
 }
