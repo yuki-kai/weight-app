@@ -94,6 +94,10 @@ class WeightService
    */
   public function registerWeight(Request $request)
   {
+    // 未入力の場合は処理を終了
+    if ($request->weight_integer == null && $request->weight_decimal == null) {
+      return;
+    }
     // 体重を整形
     $weight = $request->weight_integer.'.'.$request->weight_decimal;
     // 第一引数に該当するデータがあれば更新、なければ第二引数のデータで新規作成

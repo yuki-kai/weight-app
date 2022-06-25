@@ -61,6 +61,7 @@
   </x-slot>
 </x-layout>
 
+{{-- モーダル --}}
 {{ Form::open(['route' => 'user.calendar.register', 'method' => 'POST']) }}
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -72,8 +73,8 @@
       </div>
       <div class="modal-body">
         <div class="text-center">
-          体重 {{ Form::number('weight_integer', $today_weight['weight_integer'], ['class' => 'weight_integer']) }}
-          . {{ Form::number('weight_decimal', $today_weight['weight_decimal'], ['class' => 'weight_decimal']) }} kg
+          体重 {{ Form::number('weight_integer', $today_weight['weight_integer'], ['class' => 'weight_integer', 'min' => 0]) }}
+          . {{ Form::number('weight_decimal', $today_weight['weight_decimal'], ['class' => 'weight_decimal', 'min' => 0, 'max' => 9]) }} kg
         </div>
         <p class="text-center m-0 pt-3">既に体重が記録されている場合は上書きされます。</p>
       </div>
