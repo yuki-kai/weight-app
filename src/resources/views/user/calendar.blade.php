@@ -1,5 +1,5 @@
 <x-layout>
-  <x-slot name=title>申し込みカレンダー</x-slot>
+  <x-slot name=title>体重カレンダー</x-slot>
   <x-slot name=content>
     
     {{ Form::open() }}

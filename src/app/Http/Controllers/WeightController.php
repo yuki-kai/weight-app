@@ -13,7 +13,7 @@ class WeightController extends Controller
     }
 
     /**
-     * カレンダーを表示する
+     * 体重をカレンダー形式で表示する
      *
      * @return \Illuminate\View\View
      */
@@ -23,6 +23,18 @@ class WeightController extends Controller
         $today_weight = $this->weightService->getTodaysWeight();
 
         return view('user.calendar', compact('calendar', 'today_weight'));
+    }
+
+    /**
+     * 体重をテーブル形式で表示する
+     *
+     * @return \Illuminate\View\View
+     */
+    public function table()
+    {
+        $weights = $this->weightService->getWeights();
+
+        return view('user.table', compact('weights'));
     }
 
     /**

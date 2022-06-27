@@ -80,3 +80,50 @@ nav {
 .weight_decimal {
   width: 40px;
 }
+
+.table-wrapper {
+  .info-block {
+    max-width: 400px;
+    margin-left: auto;
+    margin-top: 30px;
+      .info-head {
+      background-color: $black;
+      width: 180px;
+      padding: 2px;
+      color: white;
+      font-weight: bold;
+      border: 1px solid rgb(222, 226, 230);
+      text-align: center;
+    }
+    .info-body {
+      border: 1px solid rgb(222, 226, 230);
+      padding: 2px;
+    }
+  }
+  .table-scroll {
+    margin-top: 30px;
+    overflow-y: scroll;
+    height: calc(90vh - (56px + 32px));;
+    .table {
+      width: unset;
+      margin-right: auto;
+      thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        th, td {
+          padding: 2px;
+          text-align: center;
+        } 
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .info-block {
+      margin: 0 auto;
+    }
+    .table {
+      margin: 0 auto;
+    }
+  }
+}

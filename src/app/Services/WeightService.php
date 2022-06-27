@@ -88,6 +88,33 @@ class WeightService
   }
 
   /**
+   * テーブル表示に必要なデータを取得する
+   * 
+   * @return array 
+   */
+  public function getWeights()
+  {
+    $weights = Weight::where('user_id', Auth::id())->get();
+
+    return $weights;
+  }
+
+  /**
+   * 体重の前回比を取得する
+   * 
+   * @return int|string
+   */
+  public function getComparedWeight($current, $prev)
+  {
+    if (bcsub($current, $prev, 1) > 0) {
+      // 正の数の時は明示的に+を付加
+      return '+'. bcsub($current, $prev, 1);
+    } else {
+      return bcsub($current, $prev, 1);
+    }
+  }
+
+  /**
    * 体重を該当日に記録・更新する
    * @param Request $request
    * @return void

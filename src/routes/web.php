@@ -16,5 +16,6 @@ use App\Http\Controllers\WeightController;
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/', [WeightController::class, 'calendar'])->name('user.calendar');
+    Route::get('/table', [WeightController::class, 'table'])->name('user.table');
     Route::post('/', [WeightController::class, 'register'])->name('user.calendar.register');
 });

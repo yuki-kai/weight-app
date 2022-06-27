@@ -18,32 +18,3 @@ $(document).on('click','td',function() {
   $('#clicked_day').text(clicked_Ymd);
   $('#clicked_weight').text(clicked_weight);
 });
-
-// // 体重入力のフォーカスが外れたら外れたら入力値を整形して再表示
-// $(function() {
-//   $('#input_weight').blur(() => {
-//     $('#input_weight').val(weightFormat($('#input_weight').val()))
-//   })
-// });
-
-// // $('#input_weight').change((e) => {
-// $('#input_weight').on('input', (e) => {
-//   if (isNaN($('#input_weight').val())) {
-//     $('#message').text('半角数字を入力してください');
-//   } else {
-//     $('#message').text('');
-//   }
-// });
-
-// // 入力された体重をフォーマット
-// const weightFormat = (str) => {
-//   // 全角数値を半角数値に変換
-//   let val = str.replace(/[０-９]/g, function(s) {
-//     return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-//   });
-//   // 区切り文字を小数点に変換
-//   val = val.replace(/[・、。,]/g, '.');
-
-  
-//   return val;
-// }

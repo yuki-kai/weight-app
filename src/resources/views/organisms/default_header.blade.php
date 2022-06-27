@@ -11,8 +11,8 @@
             Menu1
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="{{ route('user.calendar') }}">カレンダー表示</a></li>
+            <li><a class="dropdown-item" href="{{ route('user.table') }}">テーブル表示</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
