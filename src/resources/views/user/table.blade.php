@@ -10,23 +10,26 @@
           <div class="info-block">
             <div class="form-group d-flex">
               <label class="info-head">記録範囲</label>
-              <label class="info-body" style="width: 220px;">2022/4/1 から 2022/7/31</label>
+              <label class="info-body" id="day_range">2022/4/1 から 2022/7/31</label>
             </div>
             <div class="form-group d-flex">
               <label class="info-head">記録日数</label>
-              <label class="info-body" style="width: 220px;">90日</label>
+              <label class="info-body" id="day_count">90日</label>
             </div>
             <div class="form-group d-flex">
               <label class="info-head">平均体重</label>
-              <label class="info-body" style="width: 220px;">66.6</label>
+              <label class="info-body" id="average_weight">66.6kg</label>
             </div>
             <div class="form-group d-flex">
               <label class="info-head">最低体重</label>
-              <label class="info-body" style="width: 220px;">66.6</label>
+              <label class="info-body" id="min_weight">66.6kg</label>
             </div>
             <div class="form-group d-flex">
               <label class="info-head">最高体重</label>
-              <label class="info-body" style="width: 220px;">66.6</label>
+              <label class="info-body" id="max_weight">66.6kg</label>
+            </div>
+            <div>
+              <button class="btn btn-warning form-control" id="output" type="button">出力する</button>
             </div>
           </div>
         </div>
@@ -65,3 +68,5 @@
 
   </x-slot>
 </x-layout>
+
+<script src="{{ asset('js/table.js') }}"></script>

@@ -89,13 +89,14 @@ nav {
       .info-head {
       background-color: $black;
       width: 180px;
+      border: 1px solid rgb(222, 226, 230);
       padding: 2px;
       color: white;
       font-weight: bold;
-      border: 1px solid rgb(222, 226, 230);
       text-align: center;
     }
     .info-body {
+      width: 220px;
       border: 1px solid rgb(222, 226, 230);
       padding: 2px;
     }
